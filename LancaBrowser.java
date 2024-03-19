@@ -11,7 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 
 public class LancaBrowser {
-3333
+
     public static void main(String[] args) throws IOException {
         String urlStr = "https://github.com/vbasto-iscte/dataset-horarios/raw/main/SalasDeAulaPorTiposDeSala.html";
         String file = "SalasDeAulaPorTiposDeSala.html";
