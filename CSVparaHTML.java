@@ -13,6 +13,11 @@ public class CSVparaHTML {
         htmlBuilder.append("\t\t<meta charset=\"utf-8\" />\n");
         htmlBuilder.append("\t\t<link href=\"https://unpkg.com/tabulator-tables@4.8.4/dist/css/tabulator.min.css\" rel=\"stylesheet\">\n");
         htmlBuilder.append("\t\t<script type=\"text/javascript\" src=\"https://unpkg.com/tabulator-tables@4.8.4/dist/js/tabulator.min.js\"></script>\n");
+        htmlBuilder.append("\t\t<style>\n");
+        htmlBuilder.append("\t\t\t.column-checkbox-label {\n");
+        htmlBuilder.append("\t\t\t\tmargin-right: 10px;\n");
+        htmlBuilder.append("\t\t\t}\n");
+        htmlBuilder.append("\t\t</style>\n");
         htmlBuilder.append("\t</head>\n");
         htmlBuilder.append("\t<body>\n");
 
@@ -24,17 +29,17 @@ public class CSVparaHTML {
 
         // Append checkbox for column visibility
         htmlBuilder.append("\t\t<div>\n");
-        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"curso\" checked>Curso</label>\n");
-        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"unidadeCurricular\" checked>Unidade Curricular</label>\n");
-        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"turno\" checked>Turno</label>\n");
-        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"turma\" checked>Turma</label>\n");
-        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"inscritos\" checked>Inscritos no turno</label>\n");
-        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"diaSemana\" checked>Dia da Semana</label>\n");
-        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"horaInicio\" checked>Hora Início</label>\n");
-        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"horaFim\" checked>Hora Fim</label>\n");
-        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"dataAula\" checked>Data da Aula</label>\n");
-        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"salaPedida\" checked>Características da Sala Pedida</label>\n");
-        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"salaAtribuida\" checked>Sala</label>\n");
+        htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"curso\" checked>Curso</label>\n");
+        htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"unidadeCurricular\" checked>Unidade Curricular</label>\n");
+        htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"turno\" checked>Turno</label>\n");
+        htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"turma\" checked>Turma</label>\n");
+        htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"inscritos\" checked>Inscritos no turno</label>\n");
+        htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"diaSemana\" checked>Dia da Semana</label>\n");
+        htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"horaInicio\" checked>Hora Início</label>\n");
+        htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"horaFim\" checked>Hora Fim</label>\n");
+        htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"dataAula\" checked>Data da Aula</label>\n");
+        htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"SalaPedida\" checked>Características da Sala Pedida</label>\n");
+        htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"SalaAtribuida\" checked>Sala</label>\n");
         htmlBuilder.append("\t\t</div>\n");
 
         // Append script
@@ -123,19 +128,6 @@ public class CSVparaHTML {
         htmlBuilder.append("\t\t\t});\n");
 
         htmlBuilder.append("\t\t</script>\n");
-
-//        // Add event listeners for checkbox changes
-//        htmlBuilder.append("\t\t\tvar cursoCheckbox = document.getElementById('curso-checkbox');\n");
-//        htmlBuilder.append("\t\t\tvar unidadeCurricularCheckbox = document.getElementById('unidadeCurricular-checkbox');\n");
-//        htmlBuilder.append("\t\t\tvar turnoCheckbox = document.getElementById('turno-checkbox');\n");
-//        htmlBuilder.append("\t\t\tvar turmaCheckbox = document.getElementById('turma-checkbox');\n");
-//        htmlBuilder.append("\t\t\tvar inscritosCheckbox = document.getElementById('inscritos-checkbox');\n");
-//        htmlBuilder.append("\t\t\tvar diaSemanaCheckbox = document.getElementById('diaSemana-checkbox');\n");
-//        htmlBuilder.append("\t\t\tvar horaInicioCheckbox = document.getElementById('horaInicio-checkbox');\n");
-//        htmlBuilder.append("\t\t\tvar horaFimCheckbox = document.getElementById('horaFim-checkbox');\n");
-//        htmlBuilder.append("\t\t\tvar dataAulaCheckbox = document.getElementById('dataAula-checkbox');\n");
-//        htmlBuilder.append("\t\t\tvar salaPedidaCheckbox = document.getElementById('salaPedida-checkbox');\n");
-//        htmlBuilder.append("\t\t\tvar salaCheckbox = document.getElementById('salaAtribuida-checkbox');\n");
 
         // Append HTML footer
         htmlBuilder.append("\t</body>\n");
