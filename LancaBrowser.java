@@ -13,6 +13,9 @@ import javax.swing.JFrame;
 public class LancaBrowser {
 
     public static void main(String[] args) throws IOException {
+        // Gerar o arquivo HTML a partir do CSV
+        CSVparaHTML.main(args);
+
         String urlStr = "https://github.com/vbasto-iscte/dataset-horarios/raw/main/SalasDeAulaPorTiposDeSala.html";
         String file = "SalasDeAulaPorTiposDeSala.html";
         URL url = new URL(urlStr);
@@ -36,10 +39,9 @@ public class LancaBrowser {
 
         button.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                String arquivoHTML = "calendario.html";
 
-                File htmlFile = new File(arquivoHTML);
                 try {
+                    File htmlFile = new File("calendario.html");
                     Desktop.getDesktop().browse(htmlFile.toURI());
                 } catch (IOException e1) {
                     e1.printStackTrace();

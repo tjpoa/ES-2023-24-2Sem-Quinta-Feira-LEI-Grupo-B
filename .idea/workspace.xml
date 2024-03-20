@@ -6,10 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="65454ae3-9a0f-47e9-84cc-f6b1384ff611" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CSVparaHTML.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSVparaHTML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calendario.html" beforeDir="false" afterPath="$PROJECT_DIR$/calendario.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/CSVparaHTML.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/CSVparaHTML.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/calendario.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/calendario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LancaBrowser.java" beforeDir="false" afterPath="$PROJECT_DIR$/LancaBrowser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
