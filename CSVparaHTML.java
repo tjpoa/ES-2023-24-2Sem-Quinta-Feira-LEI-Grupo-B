@@ -3,7 +3,15 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * Esta classe fornece métodos para converter arquivos CSV em HTML.
+ */
 public class CSVparaHTML {
+
+    /**
+     * Converte um arquivo CSV em um arquivo HTML formatado.
+     * @param csvFilePath O caminho do arquivo CSV a ser convertido.
+     */
     public static void convertCSVtoHTML(String csvFilePath) {
         StringBuilder htmlBuilder = new StringBuilder();
 
