@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class CSVparaHTML {
-    public static void main(String[] args) {
+    public static void convertCSVtoHTML(String csvFilePath) {
         StringBuilder htmlBuilder = new StringBuilder();
 
         // Append HTML header
@@ -47,7 +47,7 @@ public class CSVparaHTML {
         htmlBuilder.append("\t\t\tvar tabledata = [\n");
 
         // Read CSV file and append data to JavaScript array
-        try (BufferedReader br = new BufferedReader(new FileReader("HorarioDeExemplo.csv"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
             String line;
             boolean firstLine = true;
             while ((line = br.readLine()) != null) {
