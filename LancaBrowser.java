@@ -36,11 +36,14 @@ public class LancaBrowser {
 
         button.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e){
-                Desktop desk = Desktop.getDesktop();
+                String arquivoHTML = "calendario.html";
+
+                File htmlFile = new File(arquivoHTML);
                 try {
-                    File htmlFile = new File(System.getProperty("user.dir") + File.separator + file);
-                    desk.open(htmlFile);
-                } catch (IOException e1) {e1.printStackTrace();}
+                    Desktop.getDesktop().browse(htmlFile.toURI());
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
             }
         });
         frame.add(button);
