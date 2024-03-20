@@ -7,6 +7,9 @@
     <list default="true" id="65454ae3-9a0f-47e9-84cc-f6b1384ff611" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CSVparaHTML.java" beforeDir="false" afterPath="$PROJECT_DIR$/CSVparaHTML.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calendario.html" beforeDir="false" afterPath="$PROJECT_DIR$/calendario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/CSVparaHTML.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/CSVparaHTML.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/calendario.html" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/calendario.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +24,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="branchTiago" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -43,7 +51,7 @@
     "Application.LancaBrowser.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "branchTiago",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/User/Documents/GitHub/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B",
     "node.js.detected.package.eslint": "true",

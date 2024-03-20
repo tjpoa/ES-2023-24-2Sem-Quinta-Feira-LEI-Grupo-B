@@ -16,11 +16,26 @@ public class CSVparaHTML {
         htmlBuilder.append("\t</head>\n");
         htmlBuilder.append("\t<body>\n");
 
-        // Append H1 tag
+        // Append H1 tag 
         htmlBuilder.append("\t\t<H1>Horário das Aulas</H1>\n");
 
         // Append div for table
         htmlBuilder.append("\t\t<div id=\"example-table\"></div>\n");
+
+        // Append checkbox for column visibility
+        htmlBuilder.append("\t\t<div>\n");
+        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"curso\" checked>Curso</label>\n");
+        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"unidadeCurricular\" checked>Unidade Curricular</label>\n");
+        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"turno\" checked>Turno</label>\n");
+        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"turma\" checked>Turma</label>\n");
+        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"inscritos\" checked>Inscritos no turno</label>\n");
+        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"diaSemana\" checked>Dia da Semana</label>\n");
+        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"horaInicio\" checked>Hora Início</label>\n");
+        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"horaFim\" checked>Hora Fim</label>\n");
+        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"dataAula\" checked>Data da Aula</label>\n");
+        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"salaPedida\" checked>Características da Sala Pedida</label>\n");
+        htmlBuilder.append("\t\t\t<label><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"salaAtribuida\" checked>Sala</label>\n");
+        htmlBuilder.append("\t\t</div>\n");
 
         // Append script
         htmlBuilder.append("\t\t<script type=\"text/javascript\">\n");
@@ -29,7 +44,12 @@ public class CSVparaHTML {
         // Read CSV file and append data to JavaScript array
         try (BufferedReader br = new BufferedReader(new FileReader("HorarioDeExemplo.csv"))) {
             String line;
+            boolean firstLine = true;
             while ((line = br.readLine()) != null) {
+                if (firstLine) {
+                    firstLine = false;
+                    continue; // Ignore the first line
+                }
                 String[] parts = line.split(";");
                 if (parts.length == 11) {
                     String curso = parts[0].trim();
@@ -41,7 +61,7 @@ public class CSVparaHTML {
                     String horaInicio = parts[6].trim();
                     String horaFim = parts[7].trim();
                     String dataAula = parts[8].trim();
-                    String caracSalaPedida = parts[9].trim();
+                    String salaPedida = parts[9].trim();
                     String sala = parts[10].trim();
 
                     htmlBuilder.append("\t\t\t\t{");
@@ -54,7 +74,7 @@ public class CSVparaHTML {
                     htmlBuilder.append("horaInicio:\"" + horaInicio + "\", ");
                     htmlBuilder.append("horaFim:\"" + horaFim + "\", ");
                     htmlBuilder.append("dataAula:\"" + dataAula + "\", ");
-                    htmlBuilder.append("salaPedida:\"" + caracSalaPedida + "\", ");
+                    htmlBuilder.append("salaPedida:\"" + salaPedida + "\", ");
                     htmlBuilder.append("salaAtribuida:\"" + sala + "\"");
                     htmlBuilder.append("},\n");
                 }
@@ -79,7 +99,7 @@ public class CSVparaHTML {
         htmlBuilder.append("\t\t\t\t\t{ title: \"Unidade Curricular\", field: \"unidadeCurricular\", headerFilter: \"input\" },\n");
         htmlBuilder.append("\t\t\t\t\t{ title: \"Turno\", field: \"turno\", headerFilter: \"input\" },\n");
         htmlBuilder.append("\t\t\t\t\t{ title: \"Turma\", field: \"turma\", headerFilter: \"input\" },\n");
-        htmlBuilder.append("\t\t\t\t\t{ title: \"Inscritos\", field: \"inscritos\", headerFilter: \"input\" },\n");
+        htmlBuilder.append("\t\t\t\t\t{ title: \"Inscritos no turno\", field: \"inscritos\", headerFilter: \"input\" },\n");
         htmlBuilder.append("\t\t\t\t\t{ title: \"Dia da Semana\", field: \"diaSemana\", headerFilter: \"input\" },\n");
         htmlBuilder.append("\t\t\t\t\t{ title: \"Hora Início\", field: \"horaInicio\", headerFilter: \"input\" },\n");
         htmlBuilder.append("\t\t\t\t\t{ title: \"Hora Fim\", field: \"horaFim\", headerFilter: \"input\" },\n");
@@ -88,7 +108,34 @@ public class CSVparaHTML {
         htmlBuilder.append("\t\t\t\t\t{ title: \"Sala Atribuída\", field: \"salaAtribuida\", headerFilter: \"input\" }\n");
         htmlBuilder.append("\t\t\t\t]\n");
         htmlBuilder.append("\t\t\t});\n");
+
+        // Add event listener for checkbox changes
+        htmlBuilder.append("\t\t\tvar checkboxes = document.querySelectorAll('.column-checkbox');\n");
+        htmlBuilder.append("\t\t\tcheckboxes.forEach(function(checkbox) {\n");
+        htmlBuilder.append("\t\t\t\tcheckbox.addEventListener('change', function() {\n");
+        htmlBuilder.append("\t\t\t\t\tvar column = this.getAttribute('data-column');\n");
+        htmlBuilder.append("\t\t\t\t\tif (this.checked) {\n");
+        htmlBuilder.append("\t\t\t\t\t\ttable.showColumn(column);\n");
+        htmlBuilder.append("\t\t\t\t\t} else {\n");
+        htmlBuilder.append("\t\t\t\t\t\ttable.hideColumn(column);\n");
+        htmlBuilder.append("\t\t\t\t\t}\n");
+        htmlBuilder.append("\t\t\t\t});\n");
+        htmlBuilder.append("\t\t\t});\n");
+
         htmlBuilder.append("\t\t</script>\n");
+
+//        // Add event listeners for checkbox changes
+//        htmlBuilder.append("\t\t\tvar cursoCheckbox = document.getElementById('curso-checkbox');\n");
+//        htmlBuilder.append("\t\t\tvar unidadeCurricularCheckbox = document.getElementById('unidadeCurricular-checkbox');\n");
+//        htmlBuilder.append("\t\t\tvar turnoCheckbox = document.getElementById('turno-checkbox');\n");
+//        htmlBuilder.append("\t\t\tvar turmaCheckbox = document.getElementById('turma-checkbox');\n");
+//        htmlBuilder.append("\t\t\tvar inscritosCheckbox = document.getElementById('inscritos-checkbox');\n");
+//        htmlBuilder.append("\t\t\tvar diaSemanaCheckbox = document.getElementById('diaSemana-checkbox');\n");
+//        htmlBuilder.append("\t\t\tvar horaInicioCheckbox = document.getElementById('horaInicio-checkbox');\n");
+//        htmlBuilder.append("\t\t\tvar horaFimCheckbox = document.getElementById('horaFim-checkbox');\n");
+//        htmlBuilder.append("\t\t\tvar dataAulaCheckbox = document.getElementById('dataAula-checkbox');\n");
+//        htmlBuilder.append("\t\t\tvar salaPedidaCheckbox = document.getElementById('salaPedida-checkbox');\n");
+//        htmlBuilder.append("\t\t\tvar salaCheckbox = document.getElementById('salaAtribuida-checkbox');\n");
 
         // Append HTML footer
         htmlBuilder.append("\t</body>\n");
