@@ -94,7 +94,7 @@ public class LancaBrowser {
      * Este método abre um arquivo HTML em um navegador.
      * @param htmlFilePath O caminho do arquivo HTML a ser aberto.
      */
-    private static void openHTMLFileInBrowser(String htmlFilePath) {
+    public static void openHTMLFileInBrowser(String htmlFilePath) {
         File htmlFile = new File(htmlFilePath);
         try {
             Desktop.getDesktop().browse(htmlFile.toURI());
