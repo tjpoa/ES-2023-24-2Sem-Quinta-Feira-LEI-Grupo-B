@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -79,6 +80,9 @@ public class CSVparaHTML {
                     String dataAula = parts[8].trim();
                     Date date = new SimpleDateFormat("dd/MM/yyyy").parse(dataAula);
                     dataAula = new SimpleDateFormat("dd-MM-yyyy").format(date);
+                    Calendar cal = Calendar.getInstance();
+                    cal.setTime(date);
+                    int semanaDoAno = cal.get(Calendar.WEEK_OF_YEAR);
                     String salaPedida = parts[9].trim();
                     String sala = parts[10].trim();
 
@@ -92,6 +96,7 @@ public class CSVparaHTML {
                     htmlBuilder.append("horaInicio:\"" + horaInicio + "\", ");
                     htmlBuilder.append("horaFim:\"" + horaFim + "\", ");
                     htmlBuilder.append("dataAula:\"" + dataAula + "\", ");
+                    htmlBuilder.append("semanaDoAno:\"" + semanaDoAno + "\", ");
                     htmlBuilder.append("salaPedida:\"" + salaPedida + "\", ");
                     htmlBuilder.append("salaAtribuida:\"" + sala + "\"");
                     htmlBuilder.append("},\n");
@@ -122,6 +127,7 @@ public class CSVparaHTML {
         htmlBuilder.append("\t\t\t\t\t{ title: \"Hora Início\", field: \"horaInicio\", headerFilter: \"input\" },\n");
         htmlBuilder.append("\t\t\t\t\t{ title: \"Hora Fim\", field: \"horaFim\", headerFilter: \"input\" },\n");
         htmlBuilder.append("\t\t\t\t\t{ title: \"Data da Aula\", field: \"dataAula\", headerFilter: \"input\" },\n");
+        htmlBuilder.append("\t\t\t\t\t{ title: \"Semana do Ano\", field: \"semanaDoAno\", headerFilter: \"input\" },\n");
         htmlBuilder.append("\t\t\t\t\t{ title: \"Características da Sala Pedida\", field: \"salaPedida\", headerFilter: \"input\" },\n");
         htmlBuilder.append("\t\t\t\t\t{ title: \"Sala Atribuída\", field: \"salaAtribuida\", headerFilter: \"input\" }\n");
         htmlBuilder.append("\t\t\t\t]\n");
