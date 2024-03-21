@@ -2,12 +2,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.temporal.ChronoUnit;
-import java.time.temporal.TemporalAdjusters;
-import java.time.temporal.WeekFields;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Esta classe fornece métodos para converter arquivos CSV em HTML.
@@ -54,10 +52,8 @@ public class CSVparaHTML {
         htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"horaInicio\" checked>Hora Início</label>\n");
         htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"horaFim\" checked>Hora Fim</label>\n");
         htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"dataAula\" checked>Data da Aula</label>\n");
-        htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"SalaPedida\" checked>Características da Sala Pedida</label>\n");
-        htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"SalaAtribuida\" checked>Sala</label>\n");
-        htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"semanaAno\" checked>Semana do Ano</label>\n");
-        htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"semanaSemestre\" checked>Semana do Semestre</label>\n");
+        htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"salaPedida\" checked>Características da Sala Pedida</label>\n");
+        htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"salaAtribuida\" checked>Sala</label>\n");
         htmlBuilder.append("\t\t</div>\n");
 
         // Append script
@@ -68,10 +64,7 @@ public class CSVparaHTML {
         try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))){
             String line;
             boolean firstLine = true;
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-            LocalDate dataMinima = null;
-            long semanas=50000;
-            while ((line = br.readLine()) != null) {
+                        while ((line = br.readLine()) != null) {
                 if (firstLine) {
                     firstLine = false;
                     continue; // Ignore the first line
@@ -101,24 +94,6 @@ public class CSVparaHTML {
                     }
                     String salaPedida = parts[9].trim();
                     String sala = parts[10].trim();
-
-                    LocalDate dataHora = LocalDate.parse(dataAula, formatter);
-                    int semanaAno = dataHora.get(WeekFields.ISO.weekOfWeekBasedYear());
-
-                    LocalDate dataAula1 = LocalDate.parse(parts[8].trim(), formatter);
-                    
-                    // Verifica se é a primeira data ou se é mais antiga do que a mínima atual
-                    if (dataMinima == null || dataAula1.isBefore(dataMinima)) {
-                        dataMinima = dataAula1; // Atualiza a data mínima
-                    }
-                        LocalDate inicioSemanaLetiva = dataMinima.with(TemporalAdjusters.previousOrSame(DayOfWeek.SUNDAY));
-                    LocalDate dataAula2 = LocalDate.parse(parts[8].trim(), formatter);
-                     
-                    semanas = ChronoUnit.WEEKS.between(inicioSemanaLetiva, dataAula2) +1;
-                     String semanaSemestre =(semanas + " semana do semestre.");
-                    
-                      
-
                      
                         htmlBuilder.append("\t\t\t\t{");
                         htmlBuilder.append("curso:\"" + curso + "\", ");
@@ -130,15 +105,14 @@ public class CSVparaHTML {
                         htmlBuilder.append("horaInicio:\"" + horaInicio + "\", ");
                         htmlBuilder.append("horaFim:\"" + horaFim + "\", ");
                         htmlBuilder.append("dataAula:\"" + dataAula + "\", ");
-                        htmlBuilder.append("salaPedida:\"" + salaPedida + "\", ");
-                        htmlBuilder.append("salaAtribuida:\"" + sala + "\", ");
-                        htmlBuilder.append("semanaAno:\"" + semanaAno + "\", ");
+                        htmlBuilder.append("semanaDoAno:\"" + semanaDoAno + "\", ");
                         htmlBuilder.append("semanaSemestre:\"" + semanaSemestre + "\", ");
+                        htmlBuilder.append("salaPedida:\"" + salaPedida + "\", ");
+                        htmlBuilder.append("salaAtribuida:\"" + sala + "\"");
                         htmlBuilder.append("},\n");
                     }
                 }   
-        
-    }catch (IOException e) {
+        } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
 
