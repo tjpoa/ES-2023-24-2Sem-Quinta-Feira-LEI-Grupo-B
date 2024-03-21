@@ -47,6 +47,8 @@ public class CSVparaHTML {
         htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"turma\" checked>Turma</label>\n");
         htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"inscritos\" checked>Inscritos no turno</label>\n");
         htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"diaSemana\" checked>Dia da Semana</label>\n");
+        htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"semanaDoAno\" checked>Semana Do Ano</label>\n");
+        htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"semanaSemestre\" checked>Semana do Semestre</label>\n");
         htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"horaInicio\" checked>Hora Início</label>\n");
         htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"horaFim\" checked>Hora Fim</label>\n");
         htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"dataAula\" checked>Data da Aula</label>\n");
@@ -83,6 +85,13 @@ public class CSVparaHTML {
                     Calendar cal = Calendar.getInstance();
                     cal.setTime(date);
                     int semanaDoAno = cal.get(Calendar.WEEK_OF_YEAR);
+                    int semanaSemestre;
+
+                    if (semanaDoAno > 35) {
+                        semanaSemestre = semanaDoAno - 35;
+                    } else {
+                        semanaSemestre = semanaDoAno;
+                    }
                     String salaPedida = parts[9].trim();
                     String sala = parts[10].trim();
 
@@ -97,6 +106,7 @@ public class CSVparaHTML {
                     htmlBuilder.append("horaFim:\"" + horaFim + "\", ");
                     htmlBuilder.append("dataAula:\"" + dataAula + "\", ");
                     htmlBuilder.append("semanaDoAno:\"" + semanaDoAno + "\", ");
+                    htmlBuilder.append("semanaSemestre:\"" + semanaSemestre + "\", ");
                     htmlBuilder.append("salaPedida:\"" + salaPedida + "\", ");
                     htmlBuilder.append("salaAtribuida:\"" + sala + "\"");
                     htmlBuilder.append("},\n");
@@ -128,6 +138,7 @@ public class CSVparaHTML {
         htmlBuilder.append("\t\t\t\t\t{ title: \"Hora Fim\", field: \"horaFim\", headerFilter: \"input\" },\n");
         htmlBuilder.append("\t\t\t\t\t{ title: \"Data da Aula\", field: \"dataAula\", headerFilter: \"input\" },\n");
         htmlBuilder.append("\t\t\t\t\t{ title: \"Semana do Ano\", field: \"semanaDoAno\", headerFilter: \"input\" },\n");
+        htmlBuilder.append("\t\t\t\t\t{ title: \"Semana do Semestre\", field: \"semanaSemestre\", headerFilter: \"input\" },\n");
         htmlBuilder.append("\t\t\t\t\t{ title: \"Características da Sala Pedida\", field: \"salaPedida\", headerFilter: \"input\" },\n");
         htmlBuilder.append("\t\t\t\t\t{ title: \"Sala Atribuída\", field: \"salaAtribuida\", headerFilter: \"input\" }\n");
         htmlBuilder.append("\t\t\t\t]\n");
