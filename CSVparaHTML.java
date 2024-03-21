@@ -2,6 +2,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Esta classe fornece métodos para converter arquivos CSV em HTML.
@@ -74,6 +77,8 @@ public class CSVparaHTML {
                     String horaInicio = parts[6].trim();
                     String horaFim = parts[7].trim();
                     String dataAula = parts[8].trim();
+                    Date date = new SimpleDateFormat("dd/MM/yyyy").parse(dataAula);
+                    dataAula = new SimpleDateFormat("dd-MM-yyyy").format(date);
                     String salaPedida = parts[9].trim();
                     String sala = parts[10].trim();
 
@@ -92,7 +97,7 @@ public class CSVparaHTML {
                     htmlBuilder.append("},\n");
                 }
             }
-        } catch (IOException e) {
+        } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
 
