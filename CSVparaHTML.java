@@ -54,7 +54,7 @@ public class CSVparaHTML {
         htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"dataAula\" checked>Data da Aula</label>\n");
         htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"salaPedida\" checked>Características da Sala Pedida</label>\n");
         htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"salaAtribuida\" checked>Sala</label>\n");
-        htmlBuilder.append("\t\t</div>\n");
+                htmlBuilder.append("\t\t</div>\n");
 
         // Append script
         htmlBuilder.append("\t\t<script type=\"text/javascript\">\n");
@@ -64,7 +64,7 @@ public class CSVparaHTML {
         try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
             String line;
             boolean firstLine = true;
-            while ((line = br.readLine()) != null) {
+                        while ((line = br.readLine()) != null) {
                 if (firstLine) {
                     firstLine = false;
                     continue; // Ignore the first line
@@ -85,7 +85,7 @@ public class CSVparaHTML {
                     Calendar cal = Calendar.getInstance();
                     cal.setTime(date);
                     int semanaDoAno = cal.get(Calendar.WEEK_OF_YEAR);
-                    int semanaSemestre;
+int semanaSemestre;
 
                     if (semanaDoAno > 35) {
                         semanaSemestre = semanaDoAno - 35;
@@ -94,24 +94,24 @@ public class CSVparaHTML {
                     }
                     String salaPedida = parts[9].trim();
                     String sala = parts[10].trim();
-
-                    htmlBuilder.append("\t\t\t\t{");
-                    htmlBuilder.append("curso:\"" + curso + "\", ");
-                    htmlBuilder.append("unidadeCurricular:\"" + unidadeCurricular + "\", ");
-                    htmlBuilder.append("turno:\"" + turno + "\", ");
-                    htmlBuilder.append("turma:\"" + turma + "\", ");
-                    htmlBuilder.append("inscritos:\"" + inscritos + "\", ");
-                    htmlBuilder.append("diaSemana:\"" + diaSemana + "\", ");
-                    htmlBuilder.append("horaInicio:\"" + horaInicio + "\", ");
-                    htmlBuilder.append("horaFim:\"" + horaFim + "\", ");
-                    htmlBuilder.append("dataAula:\"" + dataAula + "\", ");
-                    htmlBuilder.append("semanaDoAno:\"" + semanaDoAno + "\", ");
-                    htmlBuilder.append("semanaSemestre:\"" + semanaSemestre + "\", ");
-                    htmlBuilder.append("salaPedida:\"" + salaPedida + "\", ");
+                     
+                        htmlBuilder.append("\t\t\t\t{");
+                        htmlBuilder.append("curso:\"" + curso + "\", ");
+                        htmlBuilder.append("unidadeCurricular:\"" + unidadeCurricular + "\", ");
+                        htmlBuilder.append("turno:\"" + turno + "\", ");
+                        htmlBuilder.append("turma:\"" + turma + "\", ");
+                        htmlBuilder.append("inscritos:\"" + inscritos + "\", ");
+                        htmlBuilder.append("diaSemana:\"" + diaSemana + "\", ");
+                        htmlBuilder.append("horaInicio:\"" + horaInicio + "\", ");
+                        htmlBuilder.append("horaFim:\"" + horaFim + "\", ");
+                        htmlBuilder.append("dataAula:\"" + dataAula + "\", ");
+                        htmlBuilder.append("semanaDoAno:\"" + semanaDoAno + "\", ");
+                        htmlBuilder.append("semanaSemestre:\"" + semanaSemestre + "\", ");
+htmlBuilder.append("salaPedida:\"" + salaPedida + "\", ");
                     htmlBuilder.append("salaAtribuida:\"" + sala + "\"");
-                    htmlBuilder.append("},\n");
-                }
-            }
+                        htmlBuilder.append("},\n");
+                    }
+                }   
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
