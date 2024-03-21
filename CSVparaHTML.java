@@ -2,10 +2,12 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalAdjusters;
+import java.time.temporal.WeekFields;
 
 /**
  * Esta classe fornece métodos para converter arquivos CSV em HTML.
@@ -54,14 +56,14 @@ public class CSVparaHTML {
         htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"dataAula\" checked>Data da Aula</label>\n");
         htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"salaPedida\" checked>Características da Sala Pedida</label>\n");
         htmlBuilder.append("\t\t\t<label class=\"column-checkbox-label\"><input type=\"checkbox\" class=\"column-checkbox\" data-column=\"salaAtribuida\" checked>Sala</label>\n");
-                htmlBuilder.append("\t\t</div>\n");
+        htmlBuilder.append("\t\t</div>\n");
 
         // Append script
         htmlBuilder.append("\t\t<script type=\"text/javascript\">\n");
         htmlBuilder.append("\t\t\tvar tabledata = [\n");
 
         // Read CSV file and append data to JavaScript array
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFilePath))){
             String line;
             boolean firstLine = true;
                         while ((line = br.readLine()) != null) {
@@ -85,7 +87,7 @@ public class CSVparaHTML {
                     Calendar cal = Calendar.getInstance();
                     cal.setTime(date);
                     int semanaDoAno = cal.get(Calendar.WEEK_OF_YEAR);
-int semanaSemestre;
+                    int semanaSemestre;
 
                     if (semanaDoAno > 35) {
                         semanaSemestre = semanaDoAno - 35;
@@ -107,14 +109,15 @@ int semanaSemestre;
                         htmlBuilder.append("dataAula:\"" + dataAula + "\", ");
                         htmlBuilder.append("semanaDoAno:\"" + semanaDoAno + "\", ");
                         htmlBuilder.append("semanaSemestre:\"" + semanaSemestre + "\", ");
-htmlBuilder.append("salaPedida:\"" + salaPedida + "\", ");
-                    htmlBuilder.append("salaAtribuida:\"" + sala + "\"");
+                        htmlBuilder.append("salaPedida:\"" + salaPedida + "\", ");
+                        htmlBuilder.append("salaAtribuida:\"" + sala + "\"");
                         htmlBuilder.append("},\n");
                     }
                 }   
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
+
 
         // Append Tabulator initialization
         htmlBuilder.append("\t\t\t];\n");
@@ -140,7 +143,9 @@ htmlBuilder.append("salaPedida:\"" + salaPedida + "\", ");
         htmlBuilder.append("\t\t\t\t\t{ title: \"Semana do Ano\", field: \"semanaDoAno\", headerFilter: \"input\" },\n");
         htmlBuilder.append("\t\t\t\t\t{ title: \"Semana do Semestre\", field: \"semanaSemestre\", headerFilter: \"input\" },\n");
         htmlBuilder.append("\t\t\t\t\t{ title: \"Características da Sala Pedida\", field: \"salaPedida\", headerFilter: \"input\" },\n");
-        htmlBuilder.append("\t\t\t\t\t{ title: \"Sala Atribuída\", field: \"salaAtribuida\", headerFilter: \"input\" }\n");
+        htmlBuilder.append("\t\t\t\t\t{ title: \"Sala Atribuída\", field: \"salaAtribuida\", headerFilter: \"input\" },\n");
+        htmlBuilder.append("\t\t\t\t\t{ title: \"Semana do Ano\", field: \"semanaAno\", headerFilter: \"input\" },\n");  
+        htmlBuilder.append("\t\t\t\t\t{ title: \"Semana do Semestre\", field: \"semanaSemestre\", headerFilter: \"input\" }\n");
         htmlBuilder.append("\t\t\t\t]\n");
         htmlBuilder.append("\t\t\t});\n");
 
@@ -163,7 +168,7 @@ htmlBuilder.append("salaPedida:\"" + salaPedida + "\", ");
         htmlBuilder.append("\t</body>\n");
         htmlBuilder.append("</html>");
 
-        // Escrever o HTML gerado em um arquivo
+        // Write the generated HTML to a file
         try (FileWriter fw = new FileWriter("calendario.html")) {
             fw.write(htmlBuilder.toString());
         } catch (IOException e) {
