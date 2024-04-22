@@ -5,15 +5,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65454ae3-9a0f-47e9-84cc-f6b1384ff611" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/LancaBrowserTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/CaracterizaçãoDasSalas.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LancaBrowser.java" beforeDir="false" afterPath="$PROJECT_DIR$/LancaBrowser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/LancaBrowser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/LancaBrowser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSVparaHTML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CSVparaHTML.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CSVparaHTMLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CSVparaHTMLTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HorarioDeExemplo.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/HorarioDeExemplo.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LancaBrowser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LancaBrowser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LancaBrowserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LancaBrowserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SalasDeAulaPorTiposDeSala.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/SalasDeAulaPorTiposDeSala.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/calendario.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/calendario.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/.idea/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/CSVparaHTML.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/CSVparaHTMLTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/HorarioDeExemplo.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/LancaBrowser$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/LancaBrowser$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/LancaBrowser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/LancaBrowserTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B/SalasDeAulaPorTiposDeSala.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
   </component>
   <component name="ExportToHTMLSettings">
     <option name="OUTPUT_DIRECTORY" value="C:\Users\cova\Documents\GitHub\ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B\htmlReport" />
@@ -67,7 +96,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "cova2",
+    "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "18",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/User/Documents/GitHub/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B",
@@ -76,7 +105,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "coverage",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -87,11 +119,17 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Documents\GitHub\ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B\src\main\resources" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B">
+  <component name="RunManager" selected="Application.LancaBrowser">
     <configuration name="LancaBrowser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LancaBrowser" />
       <module name="ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B" />
@@ -107,7 +145,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CSVparaHTMLTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CSVparaHTMLTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CSVparaHTMLTest" />
@@ -138,11 +176,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LancaBrowser" />
         <item itemvalue="JUnit.All in ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B" />
         <item itemvalue="JUnit.LancaBrowserTest.testOpenHTMLFileInBrowser" />
         <item itemvalue="JUnit.CSVparaHTMLTest.testConvertCSVtoHTML" />
         <item itemvalue="JUnit.CSVparaHTMLTest (1)" />
-        <item itemvalue="Application.LancaBrowser" />
       </list>
     </recent_temporary>
   </component>
@@ -165,6 +203,8 @@
       <workItem from="1710936208801" duration="1396000" />
       <workItem from="1710973313155" duration="306000" />
       <workItem from="1710973948544" duration="842000" />
+      <workItem from="1713809648454" duration="74000" />
+      <workItem from="1713809743893" duration="953000" />
     </task>
     <servers />
   </component>
