@@ -49,6 +49,9 @@ public class CSVparaHTML {
 
         htmlBuilder.append("\t\t</div>\n");
 
+        // Append button for exporting filtered data
+        htmlBuilder.append("\t\t<button onclick=\"exportFilteredData()\">Export Filtered Data</button>\n");
+
         // Append script
         htmlBuilder.append("\t\t<script type=\"text/javascript\">\n");
         htmlBuilder.append("\t\t\tvar tabledata = [\n");
@@ -116,6 +119,22 @@ public class CSVparaHTML {
         htmlBuilder.append("\t\t\t\t});\n");
         htmlBuilder.append("\t\t\t});\n");
 
+        // JavaScript function to export filtered data
+        htmlBuilder.append("\t\t\tfunction exportFilteredData() {\n");
+        htmlBuilder.append("\t\t\t\tvar filteredData = table.getRows(true).map(row => row.getData());\n"); // Get filtered rows
+        htmlBuilder.append("\t\t\t\tvar csvContent = \"data:text/csv;charset=utf-8,\";\n");
+        htmlBuilder.append("\t\t\t\tcsvContent += '" + String.join(";", headers) + "\\n';\n"); // Add headers
+        htmlBuilder.append("\t\t\t\tfilteredData.forEach(function(row) {\n");
+        htmlBuilder.append("\t\t\t\t\tcsvContent += Object.values(row).join(';') + '\\n';\n"); // Add row data
+        htmlBuilder.append("\t\t\t\t});\n");
+        htmlBuilder.append("\t\t\t\tvar encodedUri = encodeURI(csvContent);\n");
+        htmlBuilder.append("\t\t\t\tvar link = document.createElement('a');\n");
+        htmlBuilder.append("\t\t\t\tlink.setAttribute('href', encodedUri);\n");
+        htmlBuilder.append("\t\t\t\tlink.setAttribute('download', 'filtered_schedule.csv');\n");
+        htmlBuilder.append("\t\t\t\tdocument.body.appendChild(link);\n");
+        htmlBuilder.append("\t\t\t\tlink.click();\n");
+        htmlBuilder.append("\t\t\t}\n");
+
         htmlBuilder.append("\t\t</script>\n");
 
         // Append HTML footer
@@ -130,5 +149,3 @@ public class CSVparaHTML {
         }
     }
 }
-
-
