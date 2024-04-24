@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/salaslayout.html" beforeDir="false" afterPath="$PROJECT_DIR$/salaslayout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CSVparaHTML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CSVparaHTML.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CSVparaHTML.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CSVparaHTML.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +63,7 @@
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.All in ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B.executor": "Coverage",
     "JUnit.CSVparaHTMLTest (1).executor": "Run",
-    "JUnit.CSVparaHTMLTest.executor": "Run",
+    "JUnit.CSVparaHTMLTest.executor": "Coverage",
     "JUnit.CSVparaHTMLTest.testConvertCSVtoHTML.executor": "Run",
     "JUnit.LancaBrowserTest.testOpenHTMLFileInBrowser.executor": "Coverage",
     "Repository.Attach.Annotations": "false",
@@ -74,7 +75,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "feature/guardar-horario",
+    "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "18",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/User/Documents/GitHub/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B",
@@ -109,7 +110,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LancaBrowser">
+  <component name="RunManager" selected="JUnit.CSVparaHTMLTest">
     <configuration name="LancaBrowser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LancaBrowser" />
       <module name="ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B" />
@@ -156,8 +157,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LancaBrowser" />
         <item itemvalue="JUnit.CSVparaHTMLTest" />
+        <item itemvalue="Application.LancaBrowser" />
         <item itemvalue="JUnit.All in ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B" />
         <item itemvalue="JUnit.LancaBrowserTest.testOpenHTMLFileInBrowser" />
         <item itemvalue="JUnit.CSVparaHTMLTest.testConvertCSVtoHTML" />
@@ -195,5 +196,6 @@
     <SUITE FILE_PATH="coverage/ES_2023_24_2Sem_Quinta_Feira_LEI_Grupo_B$All_in_ES_2023_24_2Sem_Quinta_Feira_LEI_Grupo_B.ic" NAME="All in ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B Coverage Results" MODIFIED="1710976709887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ES_2023_24_2Sem_Quinta_Feira_LEI_Grupo_B$CSVparaHTMLTest_testConvertCSVtoHTML.ic" NAME="CSVparaHTMLTest.testConvertCSVtoHTML Coverage Results" MODIFIED="1710975643294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ES_2023_24_2Sem_Quinta_Feira_LEI_Grupo_B$LancaBrowserTest_testOpenHTMLFileInBrowser.ic" NAME="LancaBrowserTest.testOpenHTMLFileInBrowser Coverage Results" MODIFIED="1710976590532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ES_2023_24_2Sem_Quinta_Feira_LEI_Grupo_B$CSVparaHTMLTest.ic" NAME="CSVparaHTMLTest Coverage Results" MODIFIED="1713967063641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

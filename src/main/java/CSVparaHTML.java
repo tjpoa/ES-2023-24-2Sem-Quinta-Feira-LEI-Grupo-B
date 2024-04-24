@@ -23,8 +23,7 @@ public class CSVparaHTML {
         htmlBuilder.append("\t</head>\n");
         htmlBuilder.append("\t<body>\n");
 
-        // Append H1 tag
-        htmlBuilder.append("\t\t<H1>Cadastro de Salas</H1>\n");
+        
 
         // Append div for table
         htmlBuilder.append("\t\t<div id=\"example-table\"></div>\n");
