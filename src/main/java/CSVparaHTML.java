@@ -121,19 +121,39 @@ public class CSVparaHTML {
 
         // JavaScript function to export filtered data
         htmlBuilder.append("\t\t\tfunction exportFilteredData() {\n");
-        htmlBuilder.append("\t\t\t\tvar filteredData = table.getRows(true).map(row => row.getData());\n"); // Get filtered rows
-        htmlBuilder.append("\t\t\t\tvar csvContent = \"data:text/csv;charset=utf-8,\";\n");
-        htmlBuilder.append("\t\t\t\tcsvContent += '" + String.join(";", headers) + "\\n';\n"); // Add headers
-        htmlBuilder.append("\t\t\t\tfilteredData.forEach(function(row) {\n");
-        htmlBuilder.append("\t\t\t\t\tcsvContent += Object.values(row).join(';') + '\\n';\n"); // Add row data
-        htmlBuilder.append("\t\t\t\t});\n");
-        htmlBuilder.append("\t\t\t\tvar encodedUri = encodeURI(csvContent);\n");
-        htmlBuilder.append("\t\t\t\tvar link = document.createElement('a');\n");
-        htmlBuilder.append("\t\t\t\tlink.setAttribute('href', encodedUri);\n");
-        htmlBuilder.append("\t\t\t\tlink.setAttribute('download', 'filtered_schedule.csv');\n");
-        htmlBuilder.append("\t\t\t\tdocument.body.appendChild(link);\n");
-        htmlBuilder.append("\t\t\t\tlink.click();\n");
-        htmlBuilder.append("\t\t\t}\n");
+htmlBuilder.append("\t\t\t\tvar checkboxes = document.querySelectorAll('.column-checkbox');\n");
+htmlBuilder.append("\t\t\t\tvar filteredData = table.getRows(true).map(row => {\n");
+htmlBuilder.append("\t\t\t\t\tvar rowData = row.getData();\n");
+htmlBuilder.append("\t\t\t\t\treturn Array.from(checkboxes)\n");
+htmlBuilder.append("\t\t\t\t\t\t.filter(function(checkbox) {\n");
+htmlBuilder.append("\t\t\t\t\t\t\treturn checkbox.checked;\n");
+htmlBuilder.append("\t\t\t\t\t\t})\n");
+htmlBuilder.append("\t\t\t\t\t\t.map(function(checkbox) {\n");
+htmlBuilder.append("\t\t\t\t\t\t\treturn checkbox.getAttribute('data-column');\n");
+htmlBuilder.append("\t\t\t\t\t\t})\n");
+htmlBuilder.append("\t\t\t\t\t\t.map(function(column) {\n");
+htmlBuilder.append("\t\t\t\t\t\t\treturn rowData[column];\n");
+htmlBuilder.append("\t\t\t\t\t\t});\n");
+htmlBuilder.append("\t\t\t\t});\n");
+htmlBuilder.append("\t\t\t\tvar csvContent = \"data:text/csv;charset=utf-8,\";\n");
+htmlBuilder.append("\t\t\t\tcsvContent += Array.from(checkboxes)\n");
+htmlBuilder.append("\t\t\t\t\t.filter(function(checkbox) {\n");
+htmlBuilder.append("\t\t\t\t\t\treturn checkbox.checked;\n");
+htmlBuilder.append("\t\t\t\t\t})\n");
+htmlBuilder.append("\t\t\t\t\t.map(function(checkbox) {\n");
+htmlBuilder.append("\t\t\t\t\t\treturn checkbox.getAttribute('data-column');\n");
+htmlBuilder.append("\t\t\t\t\t})\n");
+htmlBuilder.append("\t\t\t\t\t.join(';') + '\\n';\n"); // Add headers
+htmlBuilder.append("\t\t\t\tfilteredData.forEach(function(row) {\n");
+htmlBuilder.append("\t\t\t\t\tcsvContent += row.join(';') + '\\n';\n"); // Add row data
+htmlBuilder.append("\t\t\t\t});\n");
+htmlBuilder.append("\t\t\t\tvar encodedUri = encodeURI(csvContent);\n");
+htmlBuilder.append("\t\t\t\tvar link = document.createElement('a');\n");
+htmlBuilder.append("\t\t\t\tlink.setAttribute('href', encodedUri);\n");
+htmlBuilder.append("\t\t\t\tlink.setAttribute('download', 'filtered_schedule.csv');\n");
+htmlBuilder.append("\t\t\t\tdocument.body.appendChild(link);\n");
+htmlBuilder.append("\t\t\t\tlink.click();\n");
+htmlBuilder.append("\t\t\t}\n");
 
         htmlBuilder.append("\t\t</script>\n");
 
