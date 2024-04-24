@@ -1,0 +1,70 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Cadastro de Salas</title>
+		<link href="https://unpkg.com/tabulator-tables@4.8.4/dist/css/tabulator.min.css" rel="stylesheet">
+		<script type="text/javascript" src="https://unpkg.com/tabulator-tables@4.8.4/dist/js/tabulator.min.js"></script>
+		<style>
+			.column-checkbox-label {
+				margin-right: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<H1>Cadastro de Salas</H1>
+		<div id="example-table"></div>
+		<div>
+			<label class="column-checkbox-label"><input type="checkbox" class="column-checkbox" data-column="Curso" checked>Curso</label>
+			<label class="column-checkbox-label"><input type="checkbox" class="column-checkbox" data-column="Unidade Curricular" checked>Unidade Curricular</label>
+			<label class="column-checkbox-label"><input type="checkbox" class="column-checkbox" data-column="Turno" checked>Turno</label>
+			<label class="column-checkbox-label"><input type="checkbox" class="column-checkbox" data-column="Turma" checked>Turma</label>
+			<label class="column-checkbox-label"><input type="checkbox" class="column-checkbox" data-column="Inscritos" checked>Inscritos</label>
+			<label class="column-checkbox-label"><input type="checkbox" class="column-checkbox" data-column="Dia da Semana" checked>Dia da Semana</label>
+			<label class="column-checkbox-label"><input type="checkbox" class="column-checkbox" data-column="Hora Início" checked>Hora Início</label>
+			<label class="column-checkbox-label"><input type="checkbox" class="column-checkbox" data-column="Hora Fim" checked>Hora Fim</label>
+			<label class="column-checkbox-label"><input type="checkbox" class="column-checkbox" data-column="Data da Aula" checked>Data da Aula</label>
+			<label class="column-checkbox-label"><input type="checkbox" class="column-checkbox" data-column="Características da Sala Pedida" checked>Características da Sala Pedida</label>
+			<label class="column-checkbox-label"><input type="checkbox" class="column-checkbox" data-column="Sala Atribuída" checked>Sala Atribuída</label>
+		</div>
+		<script type="text/javascript">
+			var tabledata = [
+				{"Curso":"Curso A", "Unidade Curricular":"UC1", "Turno":"Manhã", "Turma":"Turma 1", "Inscritos":"20", "Dia da Semana":"Segunda-feira", "Hora Início":"08:00", "Hora Fim":"10:00", "Data da Aula":"2022-01-01", "Características da Sala Pedida":"Sala 1", "Sala Atribuída":"Sala 101"},
+				{"Curso":"Curso B", "Unidade Curricular":"UC2", "Turno":"Tarde", "Turma":"Turma 2", "Inscritos":"15", "Dia da Semana":"Terça-feira", "Hora Início":"14:00", "Hora Fim":"16:00", "Data da Aula":"2022-01-02", "Características da Sala Pedida":"Sala 2", "Sala Atribuída":"Sala 102"},
+			];
+			var table = new Tabulator("#example-table", {
+				data: tabledata,
+				layout: "fitDatafill",
+				pagination: "local",
+				paginationSize: 10,
+				paginationSizeSelector: [5, 10, 20, 40],
+				movableColumns: true,
+				paginationCounter: "rows",
+				initialSort: [{ column: "Edificio", dir: "asc" }],
+				columns: [
+					{ title: "Curso", field: "Curso", headerFilter: "input" },
+					{ title: "Unidade Curricular", field: "Unidade Curricular", headerFilter: "input" },
+					{ title: "Turno", field: "Turno", headerFilter: "input" },
+					{ title: "Turma", field: "Turma", headerFilter: "input" },
+					{ title: "Inscritos", field: "Inscritos", headerFilter: "input" },
+					{ title: "Dia da Semana", field: "Dia da Semana", headerFilter: "input" },
+					{ title: "Hora Início", field: "Hora Início", headerFilter: "input" },
+					{ title: "Hora Fim", field: "Hora Fim", headerFilter: "input" },
+					{ title: "Data da Aula", field: "Data da Aula", headerFilter: "input" },
+					{ title: "Características da Sala Pedida", field: "Características da Sala Pedida", headerFilter: "input" },
+					{ title: "Sala Atribuída", field: "Sala Atribuída", headerFilter: "input" },
+				]
+			});
+			var checkboxes = document.querySelectorAll('.column-checkbox');
+			checkboxes.forEach(function(checkbox) {
+				checkbox.addEventListener('change', function() {
+					var column = this.getAttribute('data-column');
+					if (this.checked) {
+						table.showColumn(column);
+					} else {
+						table.hideColumn(column);
+					}
+				});
+			});
+		</script>
+	</body>
+</html>

@@ -3,10 +3,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
 
 /**
  * Esta classe Java é responsável por fornecer uma interface gráfica simples
@@ -21,90 +17,56 @@ public class LancaBrowser {
         // Cria uma instância do JFrame
         JFrame frame = new JFrame("CSV to HTML Converter");
 
-        // Cria botões para escolher um arquivo CSV local ou especificar uma URL para um arquivo CSV
-        JButton localFileButton = new JButton("Choose Local CSV File");
-        JButton urlButton = new JButton("Specify URL to CSV File");
+        // Cria um botão para converter o arquivo CSV
+        JButton converterButton = new JButton("Converter");
 
-        // Define as posições e tamanhos dos botões
-        localFileButton.setBounds(50, 50, 250, 50);
-        urlButton.setBounds(50, 120, 250, 50);
+        // Define a posição e o tamanho do botão
+        converterButton.setBounds(50, 50, 250, 50);
 
-        // Adiciona ouvintes de ação aos botões
-        localFileButton.addActionListener(new ActionListener() {
+        // Adiciona um ouvinte de ação ao botão
+        converterButton.addActionListener(new ActionListener() {
             /**
-             * Este método é chamado quando o botão "Escolher Arquivo Local CSV" é clicado.
+             * Este método é chamado quando o botão "Converter" é clicado.
              * @param e O evento de ação associado ao clique do botão.
              */
             public void actionPerformed(ActionEvent e) {
-                // Abre um seletor de arquivo
+                // Abre o seletor de arquivos para escolher o arquivo CSV
                 JFileChooser fileChooser = new JFileChooser();
                 int returnValue = fileChooser.showOpenDialog(frame);
                 if (returnValue == JFileChooser.APPROVE_OPTION) {
                     // Obtém o arquivo CSV selecionado
                     File selectedFile = fileChooser.getSelectedFile();
                     String csvFilePath = selectedFile.getAbsolutePath();
+
                     // Converte o arquivo CSV em HTML
                     CSVparaHTML.convertCSVtoHTML(csvFilePath);
+
                     // Abre o arquivo HTML no navegador
-                    openHTMLFileInBrowser("calendario.html");
+                    abrirHTMLNoBrowser("salaslayout.html");
                 }
             }
         });
 
-        urlButton.addActionListener(new ActionListener() {
-            /**
-             * Este método é chamado quando o botão "Especificar URL para Arquivo CSV" é clicado.
-             * @param e O evento de ação associado ao clique do botão.
-             */
-            public void actionPerformed(ActionEvent e) {
-                // Solicita ao usuário que insira a URL para o arquivo CSV
-                String url = JOptionPane.showInputDialog(frame, "Enter URL to CSV File:");
-                if (url != null && !url.isEmpty()) {
-                    try {
-                        // Abre a URL e cria um arquivo temporário para o CSV
-                        URL csvUrl = new URL(url);
-                        InputStream inputStream = csvUrl.openStream();
-                        File tempFile = File.createTempFile("temp", ".csv");
-                        FileOutputStream outputStream = new FileOutputStream(tempFile);
-                        byte[] buffer = new byte[1024];
-                        int bytesRead;
-                        while ((bytesRead = inputStream.read(buffer)) != -1) {
-                            outputStream.write(buffer, 0, bytesRead);
-                        }
-                        inputStream.close();
-                        outputStream.close();
-                        // Converte o arquivo CSV em HTML
-                        CSVparaHTML.convertCSVtoHTML(tempFile.getAbsolutePath());
-                        // Abre o arquivo HTML no navegador
-                        openHTMLFileInBrowser("calendario.html");
-                    } catch (IOException ex) {
-                        ex.printStackTrace();
-                        JOptionPane.showMessageDialog(frame, "Failed to download CSV from the provided URL.");
-                    }
-                }
-            }
-        });
-
-        // Adiciona os botões ao JFrame
-        frame.add(localFileButton);
-        frame.add(urlButton);
+        // Adiciona o botão ao JFrame
+        frame.add(converterButton);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 250);
+        frame.setSize(400, 150);
         frame.setLayout(null);
         frame.setVisible(true);
     }
 
     /**
      * Este método abre um arquivo HTML em um navegador.
-     * @param htmlFilePath O caminho do arquivo HTML a ser aberto.
+     * @param htmlFileName O nome do arquivo HTML a ser aberto.
      */
-    public static void openHTMLFileInBrowser(String htmlFilePath) {
-        File htmlFile = new File(htmlFilePath);
+    public static void abrirHTMLNoBrowser(String htmlFileName) {
+        File htmlFile = new File(htmlFileName);
         try {
             Desktop.getDesktop().browse(htmlFile.toURI());
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             ex.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Failed to open HTML file in the browser.");
+            JOptionPane.showMessageDialog(null, "Falha ao abrir o arquivo HTML no navegador.");
         }
     }
 }
+
