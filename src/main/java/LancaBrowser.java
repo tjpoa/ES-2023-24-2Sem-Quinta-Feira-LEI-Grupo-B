@@ -3,6 +3,10 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 
 /**
  * Esta classe Java é responsável por fornecer uma interface gráfica simples
@@ -19,11 +23,13 @@ public class LancaBrowser {
 
         // Cria um botão para converter o arquivo CSV
         JButton converterButton = new JButton("Converter");
+        JButton urlButton = new JButton("Especificar URL para Arquivo CSV");
 
         // Define a posição e o tamanho do botão
         converterButton.setBounds(50, 50, 250, 50);
+        urlButton.setBounds(50, 110, 250, 50);
 
-        // Adiciona um ouvinte de ação ao botão
+        // Adiciona um ouvinte de ação ao botão "Converter"
         converterButton.addActionListener(new ActionListener() {
             /**
              * Este método é chamado quando o botão "Converter" é clicado.
@@ -47,10 +53,46 @@ public class LancaBrowser {
             }
         });
 
-        // Adiciona o botão ao JFrame
+        // Adiciona um ouvinte de ação ao botão "Especificar URL para Arquivo CSV"
+        urlButton.addActionListener(new ActionListener() {
+            /**
+             * Este método é chamado quando o botão "Especificar URL para Arquivo CSV" é clicado.
+             * @param e O evento de ação associado ao clique do botão.
+             */
+            public void actionPerformed(ActionEvent e) {
+                // Solicita ao usuário que insira a URL para o arquivo CSV
+                String url = JOptionPane.showInputDialog(frame, "Enter URL to CSV File:");
+                if (url != null && !url.isEmpty()) {
+                    try {
+                        // Abre a URL e cria um arquivo temporário para o CSV
+                        URL csvUrl = new URL(url);
+                        InputStream inputStream = csvUrl.openStream();
+                        File tempFile = File.createTempFile("temp", ".csv");
+                        FileOutputStream outputStream = new FileOutputStream(tempFile);
+                        byte[] buffer = new byte[1024];
+                        int bytesRead;
+                        while ((bytesRead = inputStream.read(buffer)) != -1) {
+                            outputStream.write(buffer, 0, bytesRead);
+                        }
+                        inputStream.close();
+                        outputStream.close();
+                        // Converte o arquivo CSV em HTML
+                        CSVparaHTML.convertCSVtoHTML(tempFile.getAbsolutePath());
+                        // Abre o arquivo HTML no navegador
+                        abrirHTMLNoBrowser("salaslayout.html");
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                        JOptionPane.showMessageDialog(frame, "Failed to download CSV from the provided URL.");
+                    }
+                }
+            }
+        });
+
+        // Adiciona os botões ao JFrame
         frame.add(converterButton);
+        frame.add(urlButton);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(400, 150);
+        frame.setSize(400, 200);
         frame.setLayout(null);
         frame.setVisible(true);
     }
@@ -69,4 +111,3 @@ public class LancaBrowser {
         }
     }
 }
-

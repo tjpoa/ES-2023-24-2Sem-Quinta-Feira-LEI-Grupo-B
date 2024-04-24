@@ -1,0 +1,3 @@
+Curso;Unidade Curricular;Turno;Turma;Inscritos;Dia da Semana;Hora Início;Hora Fim;Data da Aula;Características da Sala Pedida;Sala Atribuída
+Curso A;UC1;Manhã;Turma 1;20;Segunda-feira;08:00;10:00;2022-01-01;Sala 1;Sala 101
+Curso B;UC2;Tarde;Turma 2;15;Terça-feira;14:00;16:00;2022-01-02;Sala 2;Sala 102

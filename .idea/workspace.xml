@@ -5,30 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65454ae3-9a0f-47e9-84cc-f6b1384ff611" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/CaracterizaçãoDasSalas (1).csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/HorarioDeExemplo.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/QUALQUER.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/salaslayout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CSVparaHTML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CSVparaHTML.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/salaslayout.html" beforeDir="false" afterPath="$PROJECT_DIR$/salaslayout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/LancaBrowser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LancaBrowser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LancaBrowserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LancaBrowserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.idea/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/main/resources/CaracterizaçãoDasSalas.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/main/resources/HorarioDeExemplo.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/main/resources/SalasDeAulaPorTiposDeSala.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/src/main/resources/calendario.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +71,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "cova6",
+    "git-widget-placeholder": "COVA7",
     "jdk.selected.JAVA_MODULE": "18",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/User/Documents/GitHub/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B",
@@ -127,7 +106,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CSVparaHTMLTest">
+  <component name="RunManager" selected="Application.LancaBrowser">
     <configuration name="LancaBrowser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LancaBrowser" />
       <module name="ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B" />
@@ -174,8 +153,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CSVparaHTMLTest" />
         <item itemvalue="Application.LancaBrowser" />
+        <item itemvalue="JUnit.CSVparaHTMLTest" />
         <item itemvalue="JUnit.All in ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B" />
         <item itemvalue="JUnit.LancaBrowserTest.testOpenHTMLFileInBrowser" />
         <item itemvalue="JUnit.CSVparaHTMLTest.testConvertCSVtoHTML" />
@@ -204,6 +183,8 @@
       <workItem from="1713809648454" duration="74000" />
       <workItem from="1713809743893" duration="953000" />
       <workItem from="1713950794336" duration="2338000" />
+      <workItem from="1713954182454" duration="8000" />
+      <workItem from="1713954248857" duration="1281000" />
     </task>
     <servers />
   </component>
