@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65454ae3-9a0f-47e9-84cc-f6b1384ff611" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="65454ae3-9a0f-47e9-84cc-f6b1384ff611" name="Changes" comment="Sugestão Salas">
+      <change afterPath="$PROJECT_DIR$/src/main/java/formularioHTML.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/formulario_regras.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/salaslayout.html" beforeDir="false" afterPath="$PROJECT_DIR$/salaslayout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CSVparaHTML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CSVparaHTML.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CSVparaHTMLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CSVparaHTMLTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/LancaBrowser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LancaBrowser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/LancaBrowserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LancaBrowserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CSVparaHTML.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CSVparaHTML.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CSVparaHTMLTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CSVparaHTMLTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LancaBrowser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LancaBrowser.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +83,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "branchTiago",
+    "git-widget-placeholder": "Merging feature/graphic-interface",
     "jdk.selected.JAVA_MODULE": "18",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/User/Documents/GitHub/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B",
@@ -203,6 +205,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Sugestão Salas" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sugestão Salas" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

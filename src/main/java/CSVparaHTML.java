@@ -151,7 +151,6 @@ public class CSVparaHTML {
         return htmlBuilder.toString();
     }
 
-
     /**
      * Gera funções JavaScript para exportar dados filtrados e manipular checkboxes.
      *
@@ -161,12 +160,12 @@ public class CSVparaHTML {
         StringBuilder htmlBuilder = new StringBuilder();
 
         // JavaScript function to export filtered data
-        //htmlBuilder.append(generateOperatorChangeScript());
-        htmlBuilder.append("\t\t\tfunction exportFilteredData() {\n");
+        htmlBuilder.append("\t\t\tfunction exportFilteredData(format) {\n"); // Added 'format' parameter
         htmlBuilder.append("\t\t\t\tvar checkboxes = document.querySelectorAll('.column-checkbox');\n");
-        htmlBuilder.append("\t\t\t\tvar filteredData = table.getRows(true).map(row => {\n");
+        htmlBuilder.append("\t\t\t\tvar filteredData = [];\n"); // Defined filteredData variable
+        htmlBuilder.append("\t\t\t\ttable.getRows(true).forEach(function(row) {\n");
         htmlBuilder.append("\t\t\t\t\tvar rowData = row.getData();\n");
-        htmlBuilder.append("\t\t\t\t\treturn Array.from(checkboxes)\n");
+        htmlBuilder.append("\t\t\t\t\tvar filteredRow = Array.from(checkboxes)\n");
         htmlBuilder.append("\t\t\t\t\t\t.filter(function(checkbox) {\n");
         htmlBuilder.append("\t\t\t\t\t\t\treturn checkbox.checked;\n");
         htmlBuilder.append("\t\t\t\t\t\t})\n");
@@ -176,6 +175,7 @@ public class CSVparaHTML {
         htmlBuilder.append("\t\t\t\t\t\t.map(function(column) {\n");
         htmlBuilder.append("\t\t\t\t\t\t\treturn rowData[column];\n");
         htmlBuilder.append("\t\t\t\t\t\t});\n");
+        htmlBuilder.append("\t\t\t\t\tfilteredData.push(filteredRow);\n"); // Push filteredRow to filteredData
         htmlBuilder.append("\t\t\t\t});\n");
         htmlBuilder.append("\t\t\t\tif (format === 'csv') {\n");
         htmlBuilder.append("\t\t\t\t\tvar csvContent = \"data:text/csv;charset=utf-8,\";\n");
@@ -206,6 +206,7 @@ public class CSVparaHTML {
         htmlBuilder.append("\t\t\t\t\tlink.click();\n");
         htmlBuilder.append("\t\t\t\t}\n");
         htmlBuilder.append("\t\t\t}\n");
+
 
         htmlBuilder.append("\t\t\tfunction suggestSubstitutionSlots() {\n");
         htmlBuilder.append("\t\t\t\t// Capturar as preferências do usuário\n");
