@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65454ae3-9a0f-47e9-84cc-f6b1384ff611" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/salaslayout.html" beforeDir="false" afterPath="$PROJECT_DIR$/salaslayout.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/CSVparaHTML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CSVparaHTML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CSVparaHTML.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CSVparaHTML.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/salaslayout.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/salaslayout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CSVparaHTMLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CSVparaHTMLTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LancaBrowser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LancaBrowser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LancaBrowserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LancaBrowserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,18 +41,6 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;dcmae&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/tjpoa/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B.git&quot;,
-    &quot;accountId&quot;: &quot;f4e1b750-2477-4890-a1d5-c89abbd4a43e&quot;
-  }
-}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/LancaBrowser.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -71,42 +61,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.CSVparaHTML.executor&quot;: &quot;Run&quot;,
-    &quot;Application.LancaBrowser.executor&quot;: &quot;Run&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.All in ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.CSVparaHTMLTest (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CSVparaHTMLTest.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.CSVparaHTMLTest.testConvertCSVtoHTML.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.LancaBrowserTest.testOpenHTMLFileInBrowser.executor&quot;: &quot;Coverage&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/graphic-interface&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;18&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/User/Documents/GitHub/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CSVparaHTML.executor": "Run",
+    "Application.LancaBrowser.executor": "Run",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.All in ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B.executor": "Coverage",
+    "JUnit.CSVparaHTMLTest (1).executor": "Run",
+    "JUnit.CSVparaHTMLTest.executor": "Coverage",
+    "JUnit.CSVparaHTMLTest.testConvertCSVtoHTML.executor": "Run",
+    "JUnit.LancaBrowserTest.testOpenHTMLFileInBrowser.executor": "Coverage",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "git-widget-placeholder": "branchTiago",
+    "jdk.selected.JAVA_MODULE": "18",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/User/Documents/GitHub/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\Documents\GitHub\ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B" />
@@ -180,6 +170,15 @@
         <item itemvalue="JUnit.CSVparaHTMLTest.testConvertCSVtoHTML" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-18.0.2-corretto-18.0.2-4caba194b151-5720f15e" />
+        <option value="jdk-21.0.2-corretto-21.0.2-4caba194b151-51586f01" />
+        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">

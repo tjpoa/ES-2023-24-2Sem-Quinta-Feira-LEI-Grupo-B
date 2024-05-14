@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Regras para Marcação de Aula de Substituição</title>
+</head>
+<body>
+<h1>Formulário de Regras para Marcação de Aula de Substituição</h1>
+<form action="processar_regras.php" method="POST">
+    <h2>Períodos a Excluir para Alocação da Aula</h2>
+    <label><input type="checkbox" name="excluir_periodo" value="manha"> Manhã</label><br>
+    <label><input type="checkbox" name="excluir_periodo" value="tarde"> Tarde</label><br>
+    <label><input type="checkbox" name="excluir_periodo" value="noite"> Noite</label><br>
+    <label><input type="checkbox" name="excluir_periodo" value="segunda_10_12"> Segundas-feiras 10h-12h</label><br>
+    <!-- Adicione outros períodos a serem excluídos conforme necessário -->
+
+    <h2>Períodos Possíveis para Alocação da Aula</h2>
+    <label><input type="radio" name="periodo_alocacao" value="mesmo_dia"> No mesmo dia</label><br>
+    <label><input type="radio" name="periodo_alocacao" value="mesma_semana"> Na mesma semana</label><br>
+    <label><input type="radio" name="periodo_alocacao" value="entre_datas"> Entre duas datas/horas</label><br>
+    <!-- Adicione outros períodos possíveis conforme necessário -->
+
+    <h2>Preferência de Tipos de Sala</h2>
+    <label><input type="checkbox" name="preferencia_sala" value="sala_a"> Sala A</label><br>
+    <label><input type="checkbox" name="preferencia_sala" value="sala_b"> Sala B</label><br>
+    <label><input type="checkbox" name="preferencia_sala" value="sala_c"> Sala C</label><br>
+    <!-- Adicione outras preferências de sala conforme necessário -->
+
+    <h2>Tipos de Sala Não Aceitáveis</h2>
+    <label><input type="checkbox" name="sala_nao_aceitavel" value="byod"> BYOD</label><br>
+    <label><input type="checkbox" name="sala_nao_aceitavel" value="os08"> 0S08</label><br>
+    <!-- Adicione outros tipos de sala não aceitáveis conforme necessário -->
+
+    <input type="submit" value="Enviar">
+</form>
+</body>
+</html>
