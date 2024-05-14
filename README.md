@@ -11,4 +11,8 @@ Joao Cova Andrade Santos - 105082
 
 Gabriel Henriques Lebre - 105167
 
-Dário Santos da Cunha - 105229
+Identificação e descrição de erros:
+    Ao abrir o csv com a caracterização das sala é mostrado o botão sugerir slots para alocação de uma aula de substituição aparece lá.
+    Nesta versão foi perdida a implementação da semana do semestre e da semana do ano apesar de ter sido implementada anteriormente.
+Funcionalidades não implementadas ou incompletas:
+    O ponto 5 está incompleto e os restantes pontos não estão implementados.
