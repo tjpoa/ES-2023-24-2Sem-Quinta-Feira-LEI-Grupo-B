@@ -4,8 +4,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class CSVparaHTML {
+    private final String csvFilePath;
 
-    public static void convertCSVtoHTML(String csvFilePath) {
+    public CSVparaHTML(String csvFilePath) {
+        this.csvFilePath = csvFilePath;
+    }
+
+    private static String generateHTMLHeader() {
         StringBuilder htmlBuilder = new StringBuilder();
 
         // Append HTML header
@@ -21,10 +26,12 @@ public class CSVparaHTML {
         htmlBuilder.append("\t\t\t}\n");
         htmlBuilder.append("\t\t</style>\n");
         htmlBuilder.append("\t</head>\n");
-        htmlBuilder.append("\t<body>\n");
 
-        
+        return htmlBuilder.toString();
+    }
 
+    private static String generateTable(String csvFilePath) {
+        StringBuilder htmlBuilder = new StringBuilder();
         // Append div for table
         htmlBuilder.append("\t\t<div id=\"example-table\"></div>\n");
 
@@ -104,7 +111,6 @@ public class CSVparaHTML {
         // Close Tabulator initialization
         htmlBuilder.append("\t\t\t\t]\n");
         htmlBuilder.append("\t\t\t});\n");
-
         // Add event listener for checkbox changes
         htmlBuilder.append("\t\t\tvar checkboxes = document.querySelectorAll('.column-checkbox');\n");
         htmlBuilder.append("\t\t\tcheckboxes.forEach(function(checkbox) {\n");
@@ -117,44 +123,58 @@ public class CSVparaHTML {
         htmlBuilder.append("\t\t\t\t\t}\n");
         htmlBuilder.append("\t\t\t\t});\n");
         htmlBuilder.append("\t\t\t});\n");
+        return htmlBuilder.toString();
+    }
+
+    private static String generateJs() {
+        StringBuilder htmlBuilder = new StringBuilder();
 
         // JavaScript function to export filtered data
         htmlBuilder.append("\t\t\tfunction exportFilteredData() {\n");
-htmlBuilder.append("\t\t\t\tvar checkboxes = document.querySelectorAll('.column-checkbox');\n");
-htmlBuilder.append("\t\t\t\tvar filteredData = table.getRows(true).map(row => {\n");
-htmlBuilder.append("\t\t\t\t\tvar rowData = row.getData();\n");
-htmlBuilder.append("\t\t\t\t\treturn Array.from(checkboxes)\n");
-htmlBuilder.append("\t\t\t\t\t\t.filter(function(checkbox) {\n");
-htmlBuilder.append("\t\t\t\t\t\t\treturn checkbox.checked;\n");
-htmlBuilder.append("\t\t\t\t\t\t})\n");
-htmlBuilder.append("\t\t\t\t\t\t.map(function(checkbox) {\n");
-htmlBuilder.append("\t\t\t\t\t\t\treturn checkbox.getAttribute('data-column');\n");
-htmlBuilder.append("\t\t\t\t\t\t})\n");
-htmlBuilder.append("\t\t\t\t\t\t.map(function(column) {\n");
-htmlBuilder.append("\t\t\t\t\t\t\treturn rowData[column];\n");
-htmlBuilder.append("\t\t\t\t\t\t});\n");
-htmlBuilder.append("\t\t\t\t});\n");
-htmlBuilder.append("\t\t\t\tvar csvContent = \"data:text/csv;charset=utf-8,\";\n");
-htmlBuilder.append("\t\t\t\tcsvContent += Array.from(checkboxes)\n");
-htmlBuilder.append("\t\t\t\t\t.filter(function(checkbox) {\n");
-htmlBuilder.append("\t\t\t\t\t\treturn checkbox.checked;\n");
-htmlBuilder.append("\t\t\t\t\t})\n");
-htmlBuilder.append("\t\t\t\t\t.map(function(checkbox) {\n");
-htmlBuilder.append("\t\t\t\t\t\treturn checkbox.getAttribute('data-column');\n");
-htmlBuilder.append("\t\t\t\t\t})\n");
-htmlBuilder.append("\t\t\t\t\t.join(';') + '\\n';\n"); // Add headers
-htmlBuilder.append("\t\t\t\tfilteredData.forEach(function(row) {\n");
-htmlBuilder.append("\t\t\t\t\tcsvContent += row.join(';') + '\\n';\n"); // Add row data
-htmlBuilder.append("\t\t\t\t});\n");
-htmlBuilder.append("\t\t\t\tvar encodedUri = encodeURI(csvContent);\n");
-htmlBuilder.append("\t\t\t\tvar link = document.createElement('a');\n");
-htmlBuilder.append("\t\t\t\tlink.setAttribute('href', encodedUri);\n");
-htmlBuilder.append("\t\t\t\tlink.setAttribute('download', 'filtered_schedule.csv');\n");
-htmlBuilder.append("\t\t\t\tdocument.body.appendChild(link);\n");
-htmlBuilder.append("\t\t\t\tlink.click();\n");
-htmlBuilder.append("\t\t\t}\n");
-
+        htmlBuilder.append("\t\t\t\tvar checkboxes = document.querySelectorAll('.column-checkbox');\n");
+        htmlBuilder.append("\t\t\t\tvar filteredData = table.getRows(true).map(row => {\n");
+        htmlBuilder.append("\t\t\t\t\tvar rowData = row.getData();\n");
+        htmlBuilder.append("\t\t\t\t\treturn Array.from(checkboxes)\n");
+        htmlBuilder.append("\t\t\t\t\t\t.filter(function(checkbox) {\n");
+        htmlBuilder.append("\t\t\t\t\t\t\treturn checkbox.checked;\n");
+        htmlBuilder.append("\t\t\t\t\t\t})\n");
+        htmlBuilder.append("\t\t\t\t\t\t.map(function(checkbox) {\n");
+        htmlBuilder.append("\t\t\t\t\t\t\treturn checkbox.getAttribute('data-column');\n");
+        htmlBuilder.append("\t\t\t\t\t\t})\n");
+        htmlBuilder.append("\t\t\t\t\t\t.map(function(column) {\n");
+        htmlBuilder.append("\t\t\t\t\t\t\treturn rowData[column];\n");
+        htmlBuilder.append("\t\t\t\t\t\t});\n");
+        htmlBuilder.append("\t\t\t\t});\n");
+        htmlBuilder.append("\t\t\t\tvar csvContent = \"data:text/csv;charset=utf-8,\";\n");
+        htmlBuilder.append("\t\t\t\tcsvContent += Array.from(checkboxes)\n");
+        htmlBuilder.append("\t\t\t\t\t.filter(function(checkbox) {\n");
+        htmlBuilder.append("\t\t\t\t\t\treturn checkbox.checked;\n");
+        htmlBuilder.append("\t\t\t\t\t})\n");
+        htmlBuilder.append("\t\t\t\t\t.map(function(checkbox) {\n");
+        htmlBuilder.append("\t\t\t\t\t\treturn checkbox.getAttribute('data-column');\n");
+        htmlBuilder.append("\t\t\t\t\t})\n");
+        htmlBuilder.append("\t\t\t\t\t.join(';') + '\\n';\n"); // Add headers
+        htmlBuilder.append("\t\t\t\tfilteredData.forEach(function(row) {\n");
+        htmlBuilder.append("\t\t\t\t\tcsvContent += row.join(';') + '\\n';\n"); // Add row data
+        htmlBuilder.append("\t\t\t\t});\n");
+        htmlBuilder.append("\t\t\t\tvar encodedUri = encodeURI(csvContent);\n");
+        htmlBuilder.append("\t\t\t\tvar link = document.createElement('a');\n");
+        htmlBuilder.append("\t\t\t\tlink.setAttribute('href', encodedUri);\n");
+        htmlBuilder.append("\t\t\t\tlink.setAttribute('download', 'filtered_schedule.csv');\n");
+        htmlBuilder.append("\t\t\t\tdocument.body.appendChild(link);\n");
+        htmlBuilder.append("\t\t\t\tlink.click();\n");
+        htmlBuilder.append("\t\t\t}\n");
         htmlBuilder.append("\t\t</script>\n");
+        return htmlBuilder.toString();
+    }
+
+
+    public static void convertCSVtoHTML(String csvFilePath) {
+        StringBuilder htmlBuilder = new StringBuilder();
+
+        htmlBuilder.append(generateHTMLHeader());
+        htmlBuilder.append(generateTable(csvFilePath));
+        htmlBuilder.append(generateJs());
 
         // Append HTML footer
         htmlBuilder.append("\t</body>\n");

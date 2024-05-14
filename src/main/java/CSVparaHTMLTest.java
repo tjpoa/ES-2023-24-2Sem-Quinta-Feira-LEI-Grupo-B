@@ -12,10 +12,11 @@ public class CSVparaHTMLTest {
     @Test
     public void testConvertCSVtoHTML() {
         // Criar uma instância da classe CSVparaHTML
-        CSVparaHTML csvConverter = new CSVparaHTML();
+        //CSVparaHTML csvConverter = new CSVparaHTML();
 
         // Criar um arquivo CSV de teste
         String csvFilePath = "test.csv";
+        CSVparaHTML csvConverter = new CSVparaHTML(csvFilePath);
         createTestCSV(csvFilePath);
 
         // Chamar o método de conversão
