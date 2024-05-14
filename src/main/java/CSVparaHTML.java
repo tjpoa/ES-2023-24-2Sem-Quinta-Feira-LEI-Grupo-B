@@ -1,14 +1,30 @@
 import javax.swing.*;
-import java.awt.*;
 import java.io.*;
 
+/**
+ * Esta classe fornece funcionalidade para converter um arquivo CSV em uma tabela HTML
+ * com recursos avançados usando a biblioteca Tabulator.
+ */
 public class CSVparaHTML {
+    /**
+     * Caminho para o arquivo CSV a ser convertido.
+     */
     private final String csvFilePath;
 
+    /**
+     * Constrói um objeto CSVparaHTML com o caminho do arquivo CSV especificado.
+     *
+     * @param csvFilePath O caminho para o arquivo CSV.
+     */
     public CSVparaHTML(String csvFilePath) {
         this.csvFilePath = csvFilePath;
     }
 
+    /**
+     * Gera o conteúdo HTML para a tabela com base nos dados do arquivo CSV.
+     *
+     * @return O conteúdo HTML para a tabela como uma string.
+     */
     private static String generateHTMLHeader() {
         StringBuilder htmlBuilder = new StringBuilder();
 
@@ -29,6 +45,12 @@ public class CSVparaHTML {
         return htmlBuilder.toString();
     }
 
+    /**
+     * Gera o código HTML para a tabela com base nos dados do arquivo CSV.
+     *
+     * @param csvFilePath O caminho para o arquivo CSV.
+     * @return O código HTML para a tabela como uma string.
+     */
     private static String generateTable(String csvFilePath) {
         StringBuilder htmlBuilder = new StringBuilder();
         // Append div for table
@@ -126,18 +148,13 @@ public class CSVparaHTML {
         htmlBuilder.append("\t\t\t});\n");
         return htmlBuilder.toString();
     }
-    private static String generateOperatorChangeScript() {
-        StringBuilder htmlBuilder = new StringBuilder();
 
-        htmlBuilder.append("\t\t<script>\n");
-        htmlBuilder.append("\t\t\tfunction handleOperatorChange() {\n");
-        htmlBuilder.append("\t\t\t\tvar selectedOperator = document.getElementById('operatorSelect').value;\n");
-        htmlBuilder.append("\t\t\t\tconsole.log('Selected operator: ' + selectedOperator);\n");
-        htmlBuilder.append("\t\t\t}\n");
-        htmlBuilder.append("\t\t</script>\n");
 
-        return htmlBuilder.toString();
-    }
+    /**
+     * Gera funções JavaScript para exportar dados filtrados e manipular checkboxes.
+     *
+     * @return Funções JavaScript como uma string.
+     */
     private static String generateJs() {
         StringBuilder htmlBuilder = new StringBuilder();
 
@@ -181,6 +198,11 @@ public class CSVparaHTML {
         return htmlBuilder.toString();
     }
 
+    /**
+     * Gera um dropdown para selecionar operadores de pesquisa.
+     *
+     * @return O conteúdo HTML para o dropdown como uma string.
+     */
     private static String generateSearchOperatorDropdown() {
         StringBuilder htmlBuilder = new StringBuilder();
 
@@ -195,21 +217,12 @@ public class CSVparaHTML {
         return htmlBuilder.toString();
     }
 
-    private static void abrirFormularioRegras() {
-        File file = new File("caminho_para_o_seu_arquivo/formulario_regras.html"); // Substitua "caminho_para_o_seu_arquivo" pelo caminho real do seu arquivo HTML
-        if (file.exists()) {
-            try {
-                Desktop.getDesktop().browse(file.toURI());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            System.out.println("Arquivo não encontrado.");
-        }
-    }
-
-
-
+    /**
+     * Converte o arquivo CSV em uma tabela HTML e o salva no diretório especificado.
+     *
+     * @param csvFilePath   O caminho para o arquivo CSV.
+     * @param saveDirectory O diretório onde o arquivo HTML será salvo.
+     */
     public static void convertCSVtoHTML(String csvFilePath, String saveDirectory) {
         StringBuilder htmlBuilder = new StringBuilder();
         htmlBuilder.append(generateHTMLHeader());
