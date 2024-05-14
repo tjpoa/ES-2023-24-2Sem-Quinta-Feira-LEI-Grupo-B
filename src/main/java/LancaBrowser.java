@@ -65,9 +65,19 @@ public class LancaBrowser {
     }
 
     private static void convertCSVToHTML(String csvFilePath) {
-        CSVparaHTML.convertCSVtoHTML(csvFilePath);
-        openHTMLInBrowser("salaslayout.html");
+        // Adicione um seletor de diretório para permitir que o usuário escolha onde salvar o arquivo HTML
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Salvar HTML");
+        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int returnValue = fileChooser.showSaveDialog(null);
+
+        if (returnValue == JFileChooser.APPROVE_OPTION) {
+            File selectedDirectory = fileChooser.getSelectedFile();
+            String saveDirectory = selectedDirectory.getAbsolutePath();
+            CSVparaHTML.convertCSVtoHTML(csvFilePath, saveDirectory);
+        }
     }
+
 
     public static void openHTMLInBrowser(String htmlFileName) {
         File htmlFile = new File(htmlFileName);

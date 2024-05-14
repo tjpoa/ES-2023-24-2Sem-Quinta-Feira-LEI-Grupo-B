@@ -1,9 +1,7 @@
 import org.junit.Test;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class CSVparaHTMLTest {
@@ -11,21 +9,21 @@ public class CSVparaHTMLTest {
     // Teste para garantir que o método convertCSVtoHTML() gera o HTML esperado
     @Test
     public void testConvertCSVtoHTML() {
-        // Criar uma instância da classe CSVparaHTML
-        //CSVparaHTML csvConverter = new CSVparaHTML();
+        // Defina o diretório de destino para salvar o arquivo HTML gerado
+        String saveDirectory = "test_output";
 
         // Criar um arquivo CSV de teste
         String csvFilePath = "test.csv";
-        CSVparaHTML csvConverter = new CSVparaHTML(csvFilePath);
         createTestCSV(csvFilePath);
 
+        // Criar uma instância da classe CSVparaHTML
+        CSVparaHTML csvConverter = new CSVparaHTML(csvFilePath);
+
         // Chamar o método de conversão
-        csvConverter.convertCSVtoHTML(csvFilePath);
+        csvConverter.convertCSVtoHTML(csvFilePath, saveDirectory);
 
         // Verificar se o arquivo HTML foi gerado corretamente
-        // Aqui você pode implementar verificações adicionais, como a presença de tags específicas ou dados esperados no HTML gerado
-        // Neste exemplo, estamos apenas verificando se o arquivo foi criado corretamente
-        File htmlFile = new File("calendario.html");
+        File htmlFile = new File(saveDirectory + File.separator + "salaslayout.html");
         assertTrue(htmlFile.exists());
 
         // Limpar os arquivos de teste após o teste
