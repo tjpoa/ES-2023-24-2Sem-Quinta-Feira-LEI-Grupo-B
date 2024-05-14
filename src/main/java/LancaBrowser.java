@@ -46,7 +46,7 @@ public class LancaBrowser {
      *
      * @param parentFrame O frame pai para o seletor de arquivo.
      */
-    private static void chooseFileAndConvert(JFrame parentFrame) {
+    static void chooseFileAndConvert(JFrame parentFrame) {
         JFileChooser fileChooser = new JFileChooser();
         int returnValue = fileChooser.showOpenDialog(parentFrame);
         if (returnValue == JFileChooser.APPROVE_OPTION) {
@@ -60,7 +60,7 @@ public class LancaBrowser {
      *
      * @param parentFrame O frame pai para o diálogo de entrada da URL.
      */
-    private static void enterURLAndConvert(JFrame parentFrame) {
+    static void enterURLAndConvert(JFrame parentFrame) {
         String url = JOptionPane.showInputDialog(parentFrame, "Enter URL to CSV File:");
         if (url != null && !url.isEmpty()) {
             try {
@@ -81,7 +81,7 @@ public class LancaBrowser {
      * @return O arquivo temporário baixado.
      * @throws IOException Se ocorrer um erro de I/O durante o download.
      */
-    private static File downloadFileFromURL(URL url) throws IOException {
+    static File downloadFileFromURL(URL url) throws IOException {
         File tempFile = File.createTempFile("temp", ".csv");
         try (InputStream inputStream = url.openStream();
              FileOutputStream outputStream = new FileOutputStream(tempFile)) {
@@ -99,7 +99,7 @@ public class LancaBrowser {
      *
      * @param csvFilePath O caminho para o arquivo CSV a ser convertido.
      */
-    private static void convertCSVToHTML(String csvFilePath) {
+    static void convertCSVToHTML(String csvFilePath) {
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Salvar HTML");
         fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);

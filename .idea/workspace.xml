@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65454ae3-9a0f-47e9-84cc-f6b1384ff611" name="Changes" comment="Sugestão Salas">
-      <change afterPath="$PROJECT_DIR$/src/main/java/formularioHTML.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/formulario_regras.html" afterDir="false" />
+    <list default="true" id="65454ae3-9a0f-47e9-84cc-f6b1384ff611" name="Changes" comment="Readme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CSVparaHTML.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CSVparaHTML.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CSVparaHTMLTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CSVparaHTMLTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/LancaBrowser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LancaBrowser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CSVparaHTML.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CSVparaHTML.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/CSVparaHTMLTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CSVparaHTMLTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/LancaBrowser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/LancaBrowser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LancaBrowserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/LancaBrowserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +39,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;dcmae&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/tjpoa/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B.git&quot;,
+    &quot;accountId&quot;: &quot;f4e1b750-2477-4890-a1d5-c89abbd4a43e&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/LancaBrowser.java" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -69,10 +77,11 @@
     "Application.LancaBrowser.executor": "Run",
     "DefaultHtmlFileTemplate": "HTML File",
     "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.All in ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B.executor": "Coverage",
+    "JUnit.All in ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B.executor": "Run",
     "JUnit.CSVparaHTMLTest (1).executor": "Run",
     "JUnit.CSVparaHTMLTest.executor": "Coverage",
     "JUnit.CSVparaHTMLTest.testConvertCSVtoHTML.executor": "Run",
+    "JUnit.LancaBrowserTest.executor": "Coverage",
     "JUnit.LancaBrowserTest.testOpenHTMLFileInBrowser.executor": "Coverage",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -83,10 +92,10 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "Merging feature/graphic-interface",
+    "git-widget-placeholder": "main",
     "jdk.selected.JAVA_MODULE": "18",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/User/Documents/GitHub/ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B",
+    "last_opened_file_path": "C:/Users/jogos/Desktop",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -118,7 +127,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.LancaBrowser">
+  <component name="RunManager" selected="JUnit.LancaBrowserTest">
     <configuration name="LancaBrowser" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="LancaBrowser" />
       <module name="ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B" />
@@ -143,12 +152,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CSVparaHTMLTest.testConvertCSVtoHTML" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LancaBrowserTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CSVparaHTMLTest" />
-      <option name="METHOD_NAME" value="testConvertCSVtoHTML" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="LancaBrowserTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -165,22 +173,13 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.LancaBrowser" />
+        <item itemvalue="JUnit.LancaBrowserTest" />
         <item itemvalue="JUnit.CSVparaHTMLTest" />
         <item itemvalue="JUnit.All in ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B" />
+        <item itemvalue="Application.LancaBrowser" />
         <item itemvalue="JUnit.LancaBrowserTest.testOpenHTMLFileInBrowser" />
-        <item itemvalue="JUnit.CSVparaHTMLTest.testConvertCSVtoHTML" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-18.0.2-corretto-18.0.2-4caba194b151-5720f15e" />
-        <option value="jdk-21.0.2-corretto-21.0.2-4caba194b151-51586f01" />
-        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -201,6 +200,15 @@
       <workItem from="1713954248857" duration="1281000" />
       <workItem from="1715685502120" duration="1616000" />
     </task>
+    <task id="LOCAL-00001" summary="Readme">
+      <option name="closed" value="true" />
+      <created>1715705122957</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1715705122957</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,16 +216,18 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Sugestão Salas" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sugestão Salas" />
+    <MESSAGE value="Readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="Readme" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/ES_2023_24_2Sem_Quinta_Feira_LEI_Grupo_B$All_in_ES_2023_24_2Sem_Quinta_Feira_LEI_Grupo_B.ic" NAME="All in ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B Coverage Results" MODIFIED="1710976709887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/ES_2023_24_2Sem_Quinta_Feira_LEI_Grupo_B$CSVparaHTMLTest_testConvertCSVtoHTML.ic" NAME="CSVparaHTMLTest.testConvertCSVtoHTML Coverage Results" MODIFIED="1710975643294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/ES_2023_24_2Sem_Quinta_Feira_LEI_Grupo_B$LancaBrowserTest_testOpenHTMLFileInBrowser.ic" NAME="LancaBrowserTest.testOpenHTMLFileInBrowser Coverage Results" MODIFIED="1710976590532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/ES_2023_24_2Sem_Quinta_Feira_LEI_Grupo_B$CSVparaHTMLTest.ic" NAME="CSVparaHTMLTest Coverage Results" MODIFIED="1713967063641" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ES_2023_24_2Sem_Quinta_Feira_LEI_Grupo_B$LancaBrowserTest.ic" NAME="LancaBrowserTest Coverage Results" MODIFIED="1715707728284" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/ES_2023_24_2Sem_Quinta_Feira_LEI_Grupo_B$All_in_ES_2023_24_2Sem_Quinta_Feira_LEI_Grupo_B.ic" NAME="All in ES-2023-24-2Sem-Quinta-Feira-LEI-Grupo-B Coverage Results" MODIFIED="1710976709887" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/ES_2023_24_2Sem_Quinta_Feira_LEI_Grupo_B$CSVparaHTMLTest.ic" NAME="CSVparaHTMLTest Coverage Results" MODIFIED="1715707508305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
+    <SUITE FILE_PATH="coverage/ES_2023_24_2Sem_Quinta_Feira_LEI_Grupo_B$CSVparaHTMLTest_testConvertCSVtoHTML.ic" NAME="CSVparaHTMLTest.testConvertCSVtoHTML Coverage Results" MODIFIED="1710975643294" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
